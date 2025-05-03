@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-static levelstrhandler levelstr;
-
 char *
 defaultlevelstrhandler(Level level)
 {
@@ -15,6 +13,8 @@ defaultlevelstrhandler(Level level)
   };
   return "unknown";
 }
+
+static levelstrhandler levelstr = defaultlevelstrhandler;
 
 void
 vlog(Level level, const char *format, va_list args)

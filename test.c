@@ -3,7 +3,6 @@
 int
 main(void)
 {
-  initlogging();
   debug("hello");
   info("hello");
   warn("hello");
