@@ -1,6 +1,7 @@
-#include "sll.h"
-#include <stdio.h>
 #include <stdarg.h>
+#include <stdio.h>
+
+#include "sll.h"
 
 char *
 defaultlevelstrhandler(Level level)
@@ -19,9 +20,9 @@ static levelstrhandler levelstr = defaultlevelstrhandler;
 void
 vlog(Level level, const char *format, va_list args)
 {
-    printf("%s ", levelstr ? levelstr(level) : "unknown");
-    vprintf(format, args);
-    printf("\n");
+  printf("%s ", levelstr ? levelstr(level) : "unknown");
+  vprintf(format, args);
+  printf("\n");
 }
 
 void
