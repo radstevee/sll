@@ -13,6 +13,5 @@ void info(const char *format, ...);
 void warn(const char *format, ...);
 void error(const char *format, ...);
 void setlevelstrhandler(levelstrhandler handler);
-void initlogging(void);
 
 #endif // SLL_H

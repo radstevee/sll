@@ -75,9 +75,3 @@ setlevelstrhandler(levelstrhandler handler)
   levelstr = handler;
 }
 
-void
-initlogging(void)
-{
-  setlevelstrhandler(defaultlevelstrhandler);
-}
-
