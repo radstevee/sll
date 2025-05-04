@@ -1,4 +1,4 @@
 CC = cc
-CFLAGS = -g -Wall -Wextra -pedantic -std=c99
+CFLAGS = -g -Wall -Wextra -pedantic
 AR = ar
 ARFLAGS = rcs
