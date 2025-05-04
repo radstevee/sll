@@ -52,7 +52,7 @@ svlog(Level level, const char *format, va_list args)
 }
 
 void
-vlog(Level level, const char *format, va_list args)
+vlogmsg(Level level, const char *format, va_list args)
 {
   const char *m = svlog(level, format, args);
   if (level == ERROR) {
@@ -115,7 +115,7 @@ logmsg(Level level, const char *format, ...)
 {
   va_list args;
   va_start(args, format);
-  vlog(level, format, args);
+  vlogmsg(level, format, args);
   va_end(args);
 }
 
@@ -124,7 +124,7 @@ debug(const char *format, ...)
 {
   va_list args;
   va_start(args, format);
-  vlog(DEBUG, format, args);
+  vlogmsg(DEBUG, format, args);
   va_end(args);
 }
 
@@ -133,7 +133,7 @@ info(const char *format, ...)
 {
   va_list args;
   va_start(args, format);
-  vlog(INFO, format, args);
+  vlogmsg(INFO, format, args);
   va_end(args);
 }
 
@@ -142,7 +142,7 @@ warn(const char *format, ...)
 {
   va_list args;
   va_start(args, format);
-  vlog(WARN, format, args);
+  vlogmsg(WARN, format, args);
   va_end(args);
 }
 
@@ -151,7 +151,7 @@ error(const char *format, ...)
 {
   va_list args;
   va_start(args, format);
-  vlog(ERROR, format, args);
+  vlogmsg(ERROR, format, args);
   va_end(args);
 }
 
