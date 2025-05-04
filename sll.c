@@ -55,7 +55,11 @@ void
 vlog(Level level, const char *format, va_list args)
 {
   const char *m = svlog(level, format, args);
-  printf("%s", m);
+  if (level == ERROR) {
+    fputs(m, stderr);
+  } else {
+    fputs(m, stdout);
+  }
 
   if (logfilefd != -999)
     write(logfilefd, m, strlen(m));
